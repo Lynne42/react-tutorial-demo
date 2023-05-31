@@ -3,11 +3,17 @@ import React from 'react';
 type Props = {
   label: string;
   placeholder: string;
+  classname?: string;
   [x: string]: any;
 };
-const InputComponent: React.FC<Props> = ({ label, placeholder, ...rest }) => {
+const InputComponent: React.FC<Props> = ({
+  label,
+  placeholder,
+  classname = '',
+  ...rest
+}) => {
   return (
-    <label>
+    <label className={`${classname}`}>
       <span className="pr-[10px]">{label}:</span>
       <input
         placeholder={placeholder}
